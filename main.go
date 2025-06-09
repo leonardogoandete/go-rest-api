@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/leonardogoandete/go-rest-api/database"
 	"github.com/leonardogoandete/go-rest-api/models"
 	"github.com/leonardogoandete/go-rest-api/routes"
 )
@@ -14,6 +15,8 @@ func main() {
 		{Id: 4, Nome: "Ada Lovelace", Historia: "Considerada a primeira programadora de computadores, trabalhou com Charles Babbage."},
 		{Id: 5, Nome: "Nikola Tesla", Historia: "Inventor e engenheiro, conhecido por suas contribuições ao desenvolvimento da eletricidade e do magnetismo."},
 	}
+
+	database.ConectaComBancoDeDados()
 
 	fmt.Println("Starting server on :8080")
 	routes.HandleRequests()
